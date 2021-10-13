@@ -56,9 +56,9 @@ class Post {
 
 ```typescript
 interface IPost {
-  id: number | undefined
-  title: string | undefined
-  content: string | undefined
+  id?: number | undefined
+  title?: string | undefined
+  content?: string | undefined
 }
 ```
 
@@ -136,7 +136,7 @@ class Post {
 
 ```typescript
 type MyRequired<T> = {
-  [P in keyof T]: T[P]
+  [P in keyof T]-?: T[P]
 }
 ```
 
