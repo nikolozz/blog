@@ -8,7 +8,7 @@ tags: NodeJs
 JavaScript-ის Event Loop-ში გვაქვს 2 Queue ესენი არის Callback (Task) Queue და MicroTask Queue (Promises), NodeJS-ში გვაქვს 6 Queue რომლის Event Callback–ები გარკვეულ ფაზაზე სრულდება, ყველა ფაზას თავის Queue აქვს. [წინა პოსტში](https://nikolozz.github.io/blog/NodeJS-Event-Loop/) განვიხილე Event Loop-ის და Libuv-ის მუშაობის პრინციპი, ამ პოსტში დავწერ ფაზების თანმიმდევრობაზე.
 
 ### Event Loop Phases
-როგორც ზემოთ ვახსენე NodeJS-ში გვაქვს 6 ფაზა, თვითოეულს თავისი Event Queue აქვს სადაც დასრულებული callback-ები ვარდება. ექვსი ფაზიდან ოთხი ფაზა არის რეალიზებული Libuv-ში, ორი ფაზა კი Node-ში. 
+როგორც ზემოთ ვახსენე NodeJS-ში გვაქვს 6 ფაზა, თითოეულს თავისი Event Queue აქვს სადაც დასრულებული callback-ები ვარდება. ექვსი ფაზიდან ოთხი ფაზა არის რეალიზებული Libuv-ში, ორი ფაზა კი Node-ში. 
 
 Libuv Phases
 - Expired Timer Callbacks
