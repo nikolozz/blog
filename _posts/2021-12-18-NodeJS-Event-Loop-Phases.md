@@ -28,7 +28,7 @@ console.log('start');
 setTimeout(() => console.log('setTimeout'), 0);
 console.log('end');
 ```
-ამ კოდის რეზულტატი იქნება:
+ამ კოდის შედეგი იქნება:
 ```
 start
 end
@@ -87,7 +87,7 @@ process.on('exit', () => {
 })
 ```
 [(code snippet)](https://gist.github.com/nikolozz/35c568ec4cb5f082c6e58586f34bcae4)
-ამ კოდის რეზულტატი იქნება:
+ამ კოდის შედეგი იქნება:
 ```
 1. process.nextTick
 2. Micro Task | Promise
