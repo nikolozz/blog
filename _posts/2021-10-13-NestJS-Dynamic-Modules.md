@@ -1,6 +1,6 @@
 ---
 layout: post
-title: NestJS Dynamic Modules
+title: NestJS | Dynamic Modules
 published: true
 tags: NestJS
 ---

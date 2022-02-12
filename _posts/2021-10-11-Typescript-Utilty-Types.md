@@ -1,6 +1,6 @@
 ---
 layout: post
-title: TypeScript Utility Types
+title: TypeScript | Utility Types
 published: true
 tags: TypeScript
 ---
