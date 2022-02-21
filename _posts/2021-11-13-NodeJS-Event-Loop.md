@@ -71,7 +71,34 @@ expired timeouts, I/O, setImeddiate, close event handlers, process.nextTick, mic
 
 ისინი შუალედურია რადგან ყოველი ფაზის დამთავრების შემდეგ სრულდებიან მაგალითად როცა setTimeout/setInterval ივენთის ჰენდლერები შესრულდებიან და Expired Timeouts and Intervals რიგში მეტი ივენთი აღარ იქნება ეს ნიშნავს ფაზის დასასრულს, ფაზის დასრულების შემდეგ Next Tick Queue და Microtasks Queue რიგებში არსებული ივენთები შესრულდება და ასე ყოველი ფაზის დასრულების შემდეგ.
 
-(Node 11 ვერსიამდე, Micro Task/Next Tick callback-ები სრულდებოდნენ ფაზის დაწყებამდე, შემდეგ ვერსიებში კი ისინი Expired Timers (setTimeout/setInterval) შემდეგაც შესრულდებიან თუ Stack ცარიელია)
+Node 11 ვერსიამდე, Micro Task/Next Tick callback-ები სრულდებოდნენ ფაზის დაწყებამდე, Node 11 > ვერსიებში process.nextTick/promise-ები შესრულდებიან აგრეთვე setTimeout/setInterval/setImmediate callback-ებს შორის.
+
+```js
+setTimeout(() => console.log('timeout1'));
+setTimeout(() => {
+    console.log('timeout2')
+    Promise.resolve().then(() => console.log('promise resolve'))
+});
+setTimeout(() => console.log('timeout3'));
+setTimeout(() => console.log('timeout4'));
+```
+Node version <= 11
+```
+timeout1
+timeout2
+timeout3
+timeout4
+promise resolve
+```
+
+Node version > 11
+```
+timeout1
+timeout2
+promise resolve
+timeout3
+timeout4
+```
 
 ![](https://raw.githubusercontent.com/nikolozz/blog/master/images/Untitled.drawio.png)
 
