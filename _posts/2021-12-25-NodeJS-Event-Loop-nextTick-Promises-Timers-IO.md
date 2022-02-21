@@ -80,10 +80,18 @@ fs.readFile('text.txt', { encoding: 'utf-8' }, (err, cb) => {
 ```
 რადგან ვიცით რომ ფაილის წაკითხვის შემდეგ I/O ფაზა დასრულდა, იმისდა მიუხედავად რომ setTimeout-ი 0 მილიწამია და ის მაშინვე უნდა შესრულდეს setImmediate შესრულდება, რადგან ის I/O ფაზის შემდეგ მოდის.
 
+#### setImmediate vs setTimeout
+ვიცით რომ Immediate Queue ფაზამდე სრულდება Expired Timers ფაზა. განვიხილოთ შემდეგი კოდი:
+```js
+setTimeout(() => console.log('setTimeout'), 0);
+setImmediate(() => console.log('setImmediate');
+```
+ამ კოდის რამდენჯერმე შესრულებისას შევნიშნავთ რომ კონსოლში პირველი `setTimeout` ან `setImmediate` იბეჭდება, უცნაურია რადგან `setTimeout` პირველი ფაზაა და პირველი მისი callback უნდა შესრულდეს, მაგრამ როგორც ავღნიშნეთ setTimeuot-ი 0 მილიწამით არ გვაძლევს გარანტიანს რომ ეს timeout 0 მილიწამში შესრულდება, ამიტომ როცა დარეგისტრირდაsetTimeout, setImmediate callback-ები და Event Loop-მა დაიწყო მუშაობა, ზოგ შემთხვევაში setTimeout არ იყო მორჩენილი ამიტომ Event Loop სხვა ფაზებზე გადავიდა, ხოლო შემდეგ იტერაციაზე დახვდა setTimeout-ის callback-ი. თუ timeout-მა მოასწრო შესრულება Event Loop-ის დაწყებამდე მაშინ პირველი კონსოლში `setTimeout` დაიბეჭდება. 
+
 წინა პოსტებში ვრცლად ვისაუბრეთ Node-ზე, კითხვების ან რედაქტირების სურვილისთვის შეგიძლიათ [მომწეროთ](https://www.linkedin.com/in/nikoloz-bokeria/) :) 
 
-- [NodeJS | Overview](https://nikolozz.github.io/blog/NodeJS-Overview/)
-- [NodeJS | Event Loop](https://nikolozz.github.io/blog/NodeJS-Event-Loop/)
-- [NodeJS | Event Loop Phases](https://nikolozz.github.io/blog/NodeJS-Event-Loop-Phases/)
+[NodeJS | Overview](https://nikolozz.github.io/blog/NodeJS-Overview/)
+[NodeJS | Event Loop](https://nikolozz.github.io/blog/NodeJS-Event-Loop/)
+[NodeJS | Event Loop Phases](https://nikolozz.github.io/blog/NodeJS-Event-Loop-Phases/)
 
 
