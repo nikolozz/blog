@@ -26,6 +26,7 @@ Hashmap-ი როგორც Linked List ისე არის ორგა�
 მთავარი განსხვავება Object და Map-ს შორის არის ის რომ ობიექტში მხოლოდ `String` და `Symbol` მონაცემთა ტიპის Key-ები შეგვიძია შევინახოთ, ხოლო Map-ში ნებისმიერი მონაცემთა ტიპის შენახვა შეგვიძლია Key–ით.
 
 Object
+
 ```javascript
 const obj = {
     1: 'Number 1',
@@ -37,6 +38,7 @@ console.log(obj['1']) // String 1
 ```
 
 Map
+
 ```javascript
 const map = new Map([[1: 'Number 1'], ['1', 'String 1']])
 
@@ -79,6 +81,7 @@ Uncaught TypeError: object is not iterable
 ვრცლად Map-ის მეთოდებს შეგიძლიათ გაეცნოთ აქ - https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map
 
 დავწეროთ რამოდენიმე მაგალითი:
+
 ```javascript
 const map = new Map([
     ['x', 'String 1'],
@@ -137,7 +140,8 @@ Set მონაცემთა სტრუქტურა ინახავ�
 ### Set vs Array
 Set-ი ჩვეულებრივი JS-ის მასივისგან განსხვავებით ბევრად ნელია იტერაციის, ჩაწერის და ძებნის დროს, მაგრამ მისი დანიშნულება არ არის ეს ოპერაციები, Set-ი განსაკუთრებით კარგია შემდეგი ოპერაციების დროს 
 
-- Difference
+Difference
+
 ```javascript
 function getDifference(a, b) {
   return new Set(
@@ -151,7 +155,7 @@ const set2 = new Set(['a', 'b']);
 console.log(getDifference(set1, set2)); // {'c'}
 ```
 
-- Intersection
+Intersection
 ```javascript
 function getIntersection(a, b) {
   return new Set(
@@ -165,14 +169,14 @@ const set2 = new Set(['a', 'b']);
 console.log(getDifference(set1, set2)); // {'a', 'b'}
 ```
 
-- Uniq
+Uniq
 ```javascript
 const arr = ['a','a','b','b'];
 
 console.log(new Set([...arr])) // {'a', 'b'}
 ```
 
-- Union
+Union
 ```javascript
 const set1 = new Set(['a', 'b', 'c']);
 const set2 = new Set(['a', 'b', 'd']);
@@ -188,7 +192,7 @@ console.log(union); // {'a', 'b', 'c', 'd'}
 
 #### Strong Reference 
 
-```
+```javascript
 let obj = { name: "nikolozz" };
 
 const people = [obj];
