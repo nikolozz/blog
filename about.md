@@ -4,12 +4,8 @@ title: About
 permalink: /about/
 ---
 
-Some information about you!
-
-### More Information
-
-A place to include any other types of information that you'd like to include about yourself.
+A seasoned Software Engineer with more than 5 years of experience, I specialize in mastering NodeJS and its internals, along with a solid grasp on databases, particularly RDBMS. With a robust understanding of OOAD and OOP principles, I have written TypeScript libraries for the internal use of the companies. My journey with leading enterprise companies has refined my skillset, ready to add value in a dynamic environment.
 
 ### Contact me
 
-[email@domain.com](mailto:email@domain.com)
+[nikolozibokeria@gmail.com](mailto:nikolozibokeria@gmail.com)
