@@ -322,7 +322,7 @@ class OrdersService {
 თუ `updateInventory` დაფეილდა, ამ შემთხვევაში ორდერი არ შეიქმნება.
 
 
-ეს დიზაინ პატერნი და `AsyncLocalStorage` საშუალებას გვაძლევს, მოვახდინოთ ბიზნეს ლოგიკისა და მონაცემთა ბაზისგან აბსტრაგირება, რაც მნიშვნელოვნად აუმჯობესებს კოდის მართვადობასა და მოქნილობას.
+Unit Of Work პატერნი და `AsyncLocalStorage` საშუალებას გვაძლევს, მოვახდინოთ ბიზნეს ლოგიკისგან მონაცემთა ბაზის აბსტრაგირება, რაც მნიშვნელოვნად აუმჯობესებს კოდის მართვადობასა და მოქნილობას.
 
 წყაროები:
  - https://learn.microsoft.com/en-us/aspnet/mvc/overview/older-versions/getting-started-with-ef-5-using-mvc-4/implementing-the-repository-and-unit-of-work-patterns-in-an-asp-net-mvc-application
